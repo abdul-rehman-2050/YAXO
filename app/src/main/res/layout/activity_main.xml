@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="pr02.learnkotlin.com.tictactoe.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/tvPlayer2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+
+        >
+
+        <View
+            android:id="@+id/player2Dot"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/circle_img"
+
+            />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Player#2"
+            android:textColor="@color/colorAccent"
+            android:textSize="25sp"
+
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutBoard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+
+
+        <TableLayout
+            android:id="@+id/tableLayoutBoard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+
+            >
+
+            <TableRow>
+
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="#FFF"
+                    android:onClick="performAction"
+                    android:text=""
+                    android:textSize="50sp"
+
+                    />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="#FFF"
+                    android:onClick="performAction"
+                    android:text=""
+                    android:textSize="50sp" />
+
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="20dp"
+
+                    android:background="#FFF"
+                    android:onClick="performAction"
+                    android:text=""
+                    android:textSize="50sp" />
+
+
+            </TableRow>
+
+            <TableRow>
+
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#FFF"
+                    android:onClick="performAction"
+                    android:text=""
+                    android:textSize="50sp" />
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#FFF"
+                    android:onClick="performAction"
+                    android:text=""
+                    android:textSize="50sp" />
+
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#FFF"
+                    android:onClick="performAction"
+                    android:text=""
+                    android:textSize="50sp" />
+
+
+            </TableRow>
+
+            <TableRow>
+
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#FFF"
+                    android:onClick="performAction"
+                    android:text=""
+                    android:textSize="50sp"
+
+                    />
+
+                <Button
+                    android:id="@+id/button8"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#FFF"
+                    android:onClick="performAction"
+                    android:text=""
+                    android:textSize="50sp" />
+
+
+                <Button
+                    android:id="@+id/button9"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#FFF"
+                    android:onClick="performAction"
+                    android:text=""
+                    android:textSize="50sp" />
+
+
+            </TableRow>
+
+
+        </TableLayout>
+
+
+        <View
+            android:id="@+id/winingLine"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="0dp"
+            android:layout_marginStart="0dp"
+            android:background="@color/colorAccent"
+
+
+            />
+
+        <View
+            android:id="@+id/winingLineVerticle"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="0dp"
+            android:layout_marginStart="0dp"
+            android:background="@color/colorAccent"
+
+
+            />
+
+        <View
+            android:id="@+id/winingLineHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/colorAccent"
+
+
+            />
+
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/tvPlayer1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <View
+            android:id="@+id/player1Dot"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/circle_img"
+
+            />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:text="Player#1"
+            android:textColor="@color/colorAccent"
+            android:textSize="25dp"
+
+
+            />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

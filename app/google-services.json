@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "227047687550",
+    "firebase_url": "https://yaxo-2cd8b.firebaseio.com",
+    "project_id": "yaxo-2cd8b",
+    "storage_bucket": "yaxo-2cd8b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227047687550:android:096927faa80d4ea8",
+        "android_client_info": {
+          "package_name": "pr02.learnkotlin.com.tictactoe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "227047687550-c4nf08md3fij615ader252vqdjm0soef.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pr02.learnkotlin.com.tictactoe",
+            "certificate_hash": "9cafe818b5539d9447475fc518466ee8290e849a"
+          }
+        },
+        {
+          "client_id": "227047687550-erehvit3f9fc8qm7ubmtbetbf120du3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD4Bl8jhlS1Xz39NlSPEMMuK3bRlW86ls"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "227047687550-erehvit3f9fc8qm7ubmtbetbf120du3f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
