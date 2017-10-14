@@ -253,7 +253,7 @@ class MainActivity : AppCompatActivity() {
                 relativeLayoutParamsV.marginStart = halfParentWidth
                 relativeLayoutParamsV.height = diagnalHeight
                 winingLine.layoutParams = relativeLayoutParamsV
-                winingLine.rotation = 130f
+                winingLine.rotation = 135f
 
             }
             2 ->{
