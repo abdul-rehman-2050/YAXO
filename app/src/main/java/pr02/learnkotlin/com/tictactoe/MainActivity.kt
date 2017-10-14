@@ -5,9 +5,6 @@ import android.opengl.Visibility
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
-import android.view.View
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
@@ -18,6 +15,12 @@ import kotlinx.android.synthetic.main.testlayout.*
 import java.lang.Math.random
 import java.lang.Math.sqrt
 import kotlin.concurrent.thread
+import android.R.menu
+import android.content.Intent
+import android.view.*
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,19 +30,79 @@ class MainActivity : AppCompatActivity() {
     var isMyTurn = false;
     var curTurnNumber = 0;
     var isGameOver = false;
+    var mAuth:FirebaseAuth?=null
+    var mUser:FirebaseUser? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
 
+        mAuth = FirebaseAuth.getInstance()
+        if(mAuth!=null){
+
+            mUser = mAuth!!.currentUser
+            Toast.makeText(applicationContext,"uuid=${mUser!!.uid.toString()}",Toast.LENGTH_SHORT).show()
+
+        }
+
         switchPlayers()
+
+
+
 
 
         // toggleButton1= (tableLayoutBoard.width/2)
 
 
 
+    }
+
+
+    override fun onStart() {
+
+
+        if(mUser == null){
+            val intent = Intent(applicationContext,LoginActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+        }
+
+        super.onStart()
+    }
+
+     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+         val inflater = menuInflater
+         inflater.inflate(R.menu.main_menu, menu)
+         return true
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        when (item.getItemId()) {
+            R.id.menuLogout -> {
+                Toast.makeText(applicationContext,"making you logged out",Toast.LENGTH_SHORT).show()
+                val mAuth = FirebaseAuth.getInstance()
+                if(mAuth!=null){
+
+                    mAuth.signOut()
+                    val intent = Intent(applicationContext,LoginActivity::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
+
+
+                }
+                //newGame()
+                return true
+            }
+            R.id.menuClearBoard -> {
+                Toast.makeText(applicationContext,"Clearing board",Toast.LENGTH_SHORT).show()
+               // showHelp()
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
     }
 
     fun takeComputerMove(){
