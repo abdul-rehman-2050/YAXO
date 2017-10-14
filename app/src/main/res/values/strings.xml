@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Tic Tac Toe</string>
+    <string name="login_string">Login</string>
+    <string name="register">Register New </string>
 </resources>
