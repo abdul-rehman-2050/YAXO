@@ -27,9 +27,9 @@ class MainActivity : AppCompatActivity() {
 
     private var mFirebaseAnalytics:FirebaseAnalytics?=null
 
-    var isMyTurn = false;
-    var curTurnNumber = 0;
-    var isGameOver = false;
+    var isMyTurn = false
+    var curTurnNumber = 0
+    var isGameOver = false
     var mAuth:FirebaseAuth?=null
     var mUser:FirebaseUser? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,6 +58,26 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+
+
+    fun resetGame(){
+
+        button1.isEnabled = true; button2.isEnabled = true; button3.isEnabled = true
+        button4.isEnabled = true; button5.isEnabled = true; button6.isEnabled = true
+        button7.isEnabled = true; button8.isEnabled = true; button9.isEnabled = true
+
+        button1.text = ""; button2.text = ""; button3.text=""
+        button4.text = ""; button5.text = ""; button6.text=""
+        button7.text = ""; button8.text = ""; button9.text=""
+
+         isMyTurn = false;  curTurnNumber = 0; isGameOver = false
+
+        switchPlayers()
+        drawWiningLine(0)
+
+
+    }
 
     override fun onStart() {
 
@@ -98,6 +118,7 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.menuClearBoard -> {
                 Toast.makeText(applicationContext,"Clearing board",Toast.LENGTH_SHORT).show()
+                resetGame()
                // showHelp()
                 return true
             }
